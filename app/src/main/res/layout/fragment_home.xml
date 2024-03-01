@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:layout_marginRight="210dp"
+            android:layout_marginLeft="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_nfc" />
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/crown__1_" />
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:src="@drawable/cogwheel" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="24dp"
+        android:text="Welcome to NFC Tools."
+        android:textColor="@color/white"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:id="@+id/addNotice"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#2A3E4F"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/nfcread"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="15dp"
+                    android:src="@drawable/scanner" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Read NFC"
+                    android:textSize="18dp"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:id="@+id/addGalleryImage"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#2A3E4F"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="15dp"
+                    android:src="@drawable/editing" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Write NFC"
+                    android:textSize="18dp"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:id="@+id/addEbook"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#2A3E4F">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="15dp"
+                    android:src="@drawable/grid" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Other"
+                    android:textSize="18dp"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:id="@+id/faculty"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#2A3E4F"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="15dp"
+                    android:src="@drawable/folder" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="My Saved Text"
+                    android:textSize="18dp"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/deleteNotice"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/nfc_history_background">
+
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:padding="15dp"
+                    android:src="@drawable/file__1_" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="NFC History"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

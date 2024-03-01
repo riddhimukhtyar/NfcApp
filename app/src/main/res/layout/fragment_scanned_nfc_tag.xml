@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scanned_nfc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/gradient_background">
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:contentDescription="@string/back_button_description"
+            android:focusable="true"
+            android:src="@drawable/back__1_" />
+
+        <TextView
+            android:id="@+id/readNfcText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="5dp"
+            android:text="Read NFC"
+            android:textSize="20dp"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Save"
+            android:textColor="#49A8E8"
+            android:textAppearance="?attr/textAppearanceButton"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="17dp"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Include FrameLayout for ScannedNfcTag fragment -->
+    <FrameLayout
+        android:id="@+id/scannedNfcTagContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
