@@ -40,6 +40,10 @@ class ScannedNfcTag : Fragment() {
         arguments?.getString(ARG_MESSAGE)?.let { message ->
             onNfcReadSuccess(message)
         }
+        binding.backButton.setOnClickListener {
+            // Use the FragmentManager to pop the current fragment off the stack
+            parentFragmentManager.popBackStack()
+        }
     }
 
     private fun setupRecyclerView() {
@@ -50,7 +54,7 @@ class ScannedNfcTag : Fragment() {
 
     fun onNfcReadSuccess(message: String) {
         // Update your RecyclerView with the message here
-        val readMessage = ScanItem(R.drawable.text_format, message, "${message.length} bytes", "NFC Read Success")
+        val readMessage = ScanItem(R.drawable.text_format, message, "${message.length} bytes")
         scanItemAdapter.updateData(listOf(readMessage))
     }
 

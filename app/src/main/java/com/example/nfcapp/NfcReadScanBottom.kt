@@ -36,6 +36,7 @@ class NfcReadScanBottom : BottomSheetDialogFragment() {
                 val message = String(ndefMessage.records[0].payload)
                 // Notify listener about the success
                 nfcReadCallback?.onNfcReadSuccess(message)
+                dismiss()
                 // Display success bottom sheet
                 NfcReadSuccessBottomSheet().show(parentFragmentManager, "NfcReadSuccessBottomSheet")
             } catch (e: Exception) {

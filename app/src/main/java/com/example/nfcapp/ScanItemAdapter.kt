@@ -13,7 +13,6 @@ class ScanItemAdapter(private var items: MutableList<ScanItem>) : RecyclerView.A
             binding.itemImage.setImageResource(scanItem.imageResId)
             binding.itemText.text = scanItem.text
             binding.itemTextSize.text = scanItem.textSize
-            binding.itemTitle.text = scanItem.title
         }
     }
 
