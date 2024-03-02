@@ -1,11 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scanned_nfc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToOutline="true"
     android:background="@drawable/gradient_background">
 
+    <!-- Top menu with back button and other controls -->
     <RelativeLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
@@ -13,52 +12,55 @@
         android:layout_alignParentTop="true"
         android:padding="16dp">
 
+        <!-- Increase the padding around the back button to increase its touch target -->
         <ImageView
             android:id="@+id/backButton"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
             android:clickable="true"
-            android:contentDescription="@string/back_button_description"
             android:focusable="true"
-            android:src="@drawable/back__1_" />
+            android:src="@drawable/back__1_"
+            android:contentDescription="@string/back_button_description"
+            android:background="?attr/selectableItemBackgroundBorderless" ></ImageView>
 
+        <!-- Increase the padding around the save button to increase its touch target -->
         <TextView
             android:id="@+id/readNfcText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="5dp"
+            android:padding="12dp"
             android:text="Read NFC"
-            android:textSize="20dp"
             android:textAppearance="?attr/textAppearanceSubtitle1"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            android:padding="12dp"
             android:layout_alignParentEnd="true"
             android:text="Save"
-            android:textColor="#49A8E8"
             android:textAppearance="?attr/textAppearanceButton"
+            android:textColor="#49A8E8"
             android:background="?attr/selectableItemBackground"
-            android:textSize="17dp"
-            android:padding="8dp"
+            android:textSize="17sp"
+            android:gravity="center"
             android:clickable="true"
             android:focusable="true" />
     </RelativeLayout>
 
+    <!-- RecyclerView for displaying the scanned NFC data -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messageRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="25dp"
         android:layout_below="@id/menu"
-        android:layout_marginTop="10dp"/>
-
-    <!-- Include FrameLayout for ScannedNfcTag fragment -->
-    <FrameLayout
-        android:id="@+id/scannedNfcTagContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>
