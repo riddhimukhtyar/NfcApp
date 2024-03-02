@@ -44,14 +44,14 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             app:cornerRadius="10dp" />
-        <TextView
-            android:id="@+id/tv_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/white"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_message"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textAppearance="?android:attr/textAppearanceMedium" />-->
 
     </LinearLayout>
 </LinearLayout>

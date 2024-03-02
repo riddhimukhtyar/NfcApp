@@ -8,21 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.io.IOException
 
 class NfcReadScanBottom : BottomSheetDialogFragment() {
 
-    private lateinit var messageTextView: TextView
+    var nfcReadCallback: NfcReadCallback? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_nfc_read_scan_bottom, container, false)
         val cancelButton: Button = view.findViewById(R.id.idBtncancel)
-        messageTextView = view.findViewById(R.id.tv_message)
 
         cancelButton.setOnClickListener {
             dismiss() // This dismisses the bottom sheet
@@ -37,11 +34,13 @@ class NfcReadScanBottom : BottomSheetDialogFragment() {
                 ndef.connect()
                 val ndefMessage: NdefMessage = ndef.ndefMessage ?: throw Exception("NDEF message is null")
                 val message = String(ndefMessage.records[0].payload)
-                messageTextView.text = message
+                // Notify listener about the success
+                nfcReadCallback?.onNfcReadSuccess(message)
                 // Display success bottom sheet
                 NfcReadSuccessBottomSheet().show(parentFragmentManager, "NfcReadSuccessBottomSheet")
-            } catch (e: Exception) { // Catching all exceptions to show error bottom sheet
+            } catch (e: Exception) {
                 Log.e("NFCRead", "Error when reading NFC tag", e)
+                nfcReadCallback?.onNfcReadError("Error reading NFC tag")
                 // Display error bottom sheet
                 NfcReadErrorBottomSheet().show(parentFragmentManager, "NfcReadErrorBottomSheet")
             } finally {
