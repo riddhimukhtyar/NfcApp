@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">NfcApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back_button_description">Back</string>
+
+
+    <string name="screen1">"Welcome To NFC Tools!"</string>
+    <string name="screen2">"Near Field Communication"</string>
+    <string name="screen3">"Let's Get Started"</string>
+    <string name="screen1desc">"Unlock The Power Of NFC Technology With Our User-Friendly Tools."</string>
+    <string name="screen2desc">"NFC Enables Short-Ranges Wireless Communication Between "</string>
+    <string name="screen3desc">"Simply Tap Your Device To Another Equipped With NFC To Initiate NFC Tools. It's That Esay!"</string>
+    <!--Buttons-->
+
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
 </resources>
