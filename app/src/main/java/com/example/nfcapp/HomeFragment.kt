@@ -10,38 +10,56 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
+import com.google.android.material.snackbar.Snackbar
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), NfcReadCallback  {
 
     private val nfcReadScanBottomTag = "NfcReadScanBottomTag"
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val readNfcCard: MaterialCardView = view.findViewById(R.id.addNotice)
         readNfcCard.setOnClickListener {
-            // Show NFC read fragment here without passing NFC tag,
-            // since tag passing will be handled in onNewIntent
-            val nfcReadScanBottomFragment = NfcReadScanBottom.newInstance()
-            nfcReadScanBottomFragment.show(parentFragmentManager, nfcReadScanBottomTag)
+            showNfcReadBottomSheet()
         }
 
         return view
+    }
+
+    private fun showNfcReadBottomSheet() {
+        val nfcReadScanBottomFragment = NfcReadScanBottom.newInstance().apply {
+            nfcReadCallback = this@HomeFragment
+        }
+        nfcReadScanBottomFragment.show(parentFragmentManager, nfcReadScanBottomTag)
+    }
+
+    override fun onNfcReadSuccess(message: String) {
+        navigateToScannedNfcTagWithMessage(message)
+    }
+
+    override fun onNfcReadError(error: String) {
+        Snackbar.make(requireView(), "NFC Read Error: $error", Snackbar.LENGTH_LONG).show()
+    }
+
+    private fun navigateToScannedNfcTagWithMessage(message: String) {
+        val scannedNfcTagFragment = ScannedNfcTag().apply {
+            arguments = Bundle().apply {
+                putString("message", message)
+            }
+        }
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, scannedNfcTagFragment, "ScannedNfcTag")
+            .addToBackStack(null)
+            .commit()
     }
 
     fun handleIntent(intent: Intent?) {
         val tag = intent?.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)
         tag?.let {
             val ndef = Ndef.get(it)
-            // Find the NFCReadScanBottom if it's already shown
             val nfcReadScanBottomFragment = parentFragmentManager.findFragmentByTag(nfcReadScanBottomTag) as? NfcReadScanBottom
-            nfcReadScanBottomFragment?.let { fragment ->
-                // Pass the NFC tag to the fragment for processing
-                fragment.readNfcTag(ndef)
-            }
+            nfcReadScanBottomFragment?.readNfcTag(ndef)
         }
     }
 
