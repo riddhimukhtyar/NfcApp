@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/EraseTag"
+        android:title="Erase Tag" />
+    <item
+        android:id="@+id/EditTag"
+        android:title="Edit Tag" />
+    <item
+        android:id="@+id/LockTag"
+        android:title="Lock Tag" />
+    <item
+        android:id="@+id/SetPassword"
+        android:title="Set Password" />
+    <item
+        android:id="@+id/RemovePassword"
+        android:title="Remove Password" />
+    <item
+        android:id="@+id/FormatMemory"
+        android:title="Format Memory" />
+</menu>

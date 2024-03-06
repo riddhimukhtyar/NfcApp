@@ -15,4 +15,9 @@
 
     <string name="next_btn">Next</string>
     <string name="let_get_started">Lets Get Started</string>
+    <string name="more_description">menu\n</string>
+    <string name="copy_button_description">copy to clipboard\n</string>
+
+    <string name="erase_confirmation">Are you sure you want to erase \"%1$s\"?</string>
+
 </resources>

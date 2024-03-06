@@ -1,66 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
 
-    <!-- Top menu with back button and other controls -->
-    <RelativeLayout
-        android:id="@+id/menu"
-        android:layout_width="match_parent"
+    <include
+        android:id="@+id/topMenuLayout"
+        layout="@layout/top_menu_layout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:padding="16dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Increase the padding around the back button to increase its touch target -->
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="12dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/back__1_"
-            android:contentDescription="@string/back_button_description"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
-        <!-- Increase the padding around the save button to increase its touch target -->
-        <TextView
-            android:id="@+id/readNfcText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:padding="12dp"
-            android:text="Read NFC"
-            android:textAppearance="?attr/textAppearanceSubtitle1"
-            android:textColor="@color/white"
-            android:textSize="19dp" />
-
-        <TextView
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:minWidth="48dp"
-            android:padding="12dp"
-            android:layout_alignParentEnd="true"
-            android:text="Save"
-            android:textAppearance="?attr/textAppearanceButton"
-            android:textColor="#49A8E8"
-            android:background="?attr/selectableItemBackground"
-            android:textSize="17sp"
-            android:gravity="center"
-            android:clickable="true"
-            android:focusable="true" />
-    </RelativeLayout>
-
-    <!-- RecyclerView for displaying the scanned NFC data -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messageRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:padding="25dp"
-        android:layout_below="@id/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topMenuLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="10dp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

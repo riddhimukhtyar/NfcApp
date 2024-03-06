@@ -21,9 +21,10 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-
+<color name="comon">#04213A</color>
     <color name="lavender">#8692f7</color>
     <color name="grey">#808080</color>
     <color name="grey1">#6C6F72</color>
-
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="yes_button_background_color">#87CEEB</color>
 </resources>
