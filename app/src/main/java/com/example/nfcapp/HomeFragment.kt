@@ -1,5 +1,6 @@
 package com.example.nfcapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.nfc.NfcAdapter
 import android.nfc.Tag
@@ -12,16 +13,25 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.snackbar.Snackbar
 
-class HomeFragment : Fragment(), NfcReadCallback  {
+class HomeFragment : Fragment(), NfcReadCallback {
 
     private val nfcReadScanBottomTag = "NfcReadScanBottomTag"
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val readNfcCard: MaterialCardView = view.findViewById(R.id.addNotice)
+        val readNfcCard: MaterialCardView = view.findViewById(R.id.readNfc)
         readNfcCard.setOnClickListener {
             showNfcReadBottomSheet()
+        }
+
+        val writeNfcCard: MaterialCardView = view.findViewById(R.id.writeNfc)
+        writeNfcCard.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, WriteNfcTag.newInstance("param1", "param2"))
+                .addToBackStack(null)
+                .commit()
         }
 
         return view

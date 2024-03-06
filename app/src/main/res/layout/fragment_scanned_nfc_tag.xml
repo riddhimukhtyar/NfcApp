@@ -22,14 +22,14 @@
             android:focusable="true"
             android:src="@drawable/back__1_"
             android:contentDescription="@string/back_button_description"
-            android:background="?attr/selectableItemBackgroundBorderless" ></ImageView>
+            android:background="?attr/selectableItemBackgroundBorderless" />
 
         <!-- Increase the padding around the save button to increase its touch target -->
         <TextView
             android:id="@+id/readNfcText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="35dp"
             android:padding="12dp"
             android:text="Read NFC"
             android:textAppearance="?attr/textAppearanceSubtitle1"

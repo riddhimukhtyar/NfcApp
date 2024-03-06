@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_background">
+
+    <!-- Top menu with back button and other controls -->
+    <RelativeLayout
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/back_button_description"
+            android:focusable="true"
+            android:paddingRight="16dp"
+            android:src="@drawable/back__1_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/readNfcText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_toEndOf="@id/backButton"
+            android:padding="12dp"
+            android:text="Add Record"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toEndOf="@id/backButton"
+            app:layout_constraintTop_toTopOf="@id/backButton" />
+
+        <ImageView
+            android:id="@+id/secondImageView"
+            android:layout_width="43dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/cogwheel"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <!-- RecyclerView for displaying the scanned NFC data -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv"
+        app:layout_constraintVertical_bias="0"
+        tools:itemCount="5"
+        tools:listitem="@layout/info_type_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

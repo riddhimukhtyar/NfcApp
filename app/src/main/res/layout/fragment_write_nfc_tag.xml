@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <!-- Top menu with back button and other controls -->
+    <RelativeLayout
+        android:id="@+id/menu1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/back_button_description"
+            android:focusable="true"
+            android:paddingRight="16dp"
+
+            android:src="@drawable/back__1_" />
+
+        <TextView
+            android:id="@+id/readNfcText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="45dp"
+            android:padding="12dp"
+            android:text="Write NFC"
+
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+
+        <ImageView
+            android:id="@+id/firstImageView"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="270dp"
+            android:src="@drawable/crown__1_" />
+
+        <ImageView
+            android:id="@+id/secondImageView"
+            android:layout_width="43dp"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/cogwheel" />
+
+    </RelativeLayout>
+
+    <!-- MaterialCardView for displaying the additional options -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/AddrecordsCardview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/menu1"
+        app:cardElevation="5dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@android:color/transparent"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="#2A3E4F">
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:padding="15dp"
+                android:src="@drawable/add" />
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Add Records"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle=""
+               />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Another MaterialCardView -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/moreoptioncardview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/AddrecordsCardview"
+        app:cardElevation="5dp"
+        android:layout_marginBottom="10dp"
+        app:strokeColor="@android:color/transparent"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="#2A3E4F">
+
+            <!-- Adjust the ImageView and TextView as needed -->
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:padding="15dp"
+                android:src="@drawable/app__1_" />
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="More Option"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                 />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
