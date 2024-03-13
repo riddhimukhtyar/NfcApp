@@ -22,12 +22,12 @@ class DatabaseHelper(context: Context?) :
         val values = ContentValues()
         values.put(COLUMN_MESSAGE, message)
         db.insert(TABLE_NAME, null, values)
-        db.close()
+//        db.close()
     }
 
     companion object {
         private const val DATABASE_NAME = "nfcDatabase.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         private const val TABLE_NAME = "nfcTags"
         private const val COLUMN_ID = "id"
         private const val COLUMN_MESSAGE = "message"

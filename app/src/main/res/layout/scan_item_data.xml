@@ -36,17 +36,17 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/itemText"
-        app:layout_constraintEnd_toStartOf="@id/itemMenu"
+        app:layout_constraintEnd_toStartOf="@id/itemNext"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/itemText"
         app:layout_constraintTop_toTopOf="@id/itemText"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/itemMenu"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/more"
+        android:id="@+id/itemNext"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:src="@drawable/baseline_navigate_next_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

@@ -51,7 +51,7 @@ class TagDetails : Fragment() {
 
     private fun displayTagDetails() {
         tagContent?.let {
-            val formattedText = it.split(".").joinToString(separator = "\n") { part ->
+            val formattedText = it.split(".").joinToString(separator = "\n \n") { part ->
                 "• $part".trim()
             }
             binding.readNfcTagMessage.text = formattedText

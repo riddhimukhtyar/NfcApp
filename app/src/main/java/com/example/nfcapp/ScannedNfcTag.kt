@@ -62,6 +62,7 @@ class ScannedNfcTag : Fragment() {
 
     private fun setupRecyclerView() {
         scanItemAdapter = ScanItemAdapter(mutableListOf()) { scanItem ->
+            // Now using the actual NFC message stored in nfcMessage
             nfcMessage?.let {
                 val tagDetailsFragment = TagDetails.newInstance(it)
                 activity?.supportFragmentManager?.beginTransaction()?.apply {
